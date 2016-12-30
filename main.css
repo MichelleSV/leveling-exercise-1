@@ -1,0 +1,18 @@
+#container{
+	width: 100%;
+	text-align: center;
+}
+.greeting{
+	display: inline-block;
+	padding: 20px 30px;
+	background-color: crimson;
+	font-family: fantasy;
+	font-size: 20px;
+}
+#next{
+	display: block;
+	margin: 20px auto;
+}
+#lastName{
+	display: none;
+}
