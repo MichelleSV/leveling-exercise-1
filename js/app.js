@@ -27,6 +27,7 @@ var lengthName = [
 	"La más tonera",
 	"Una muy buena persona"
 ];
+
  var meaningOfLastName = [
 	 "Eres bondadosa",
 	 "Eres hábil",
@@ -34,6 +35,7 @@ var lengthName = [
 	 "Eres feliz",
 	 "Eres muy hermosa"
  ]
+
 var load = function(){
 	//Getting hour
 	var hour = new Date().getHours();
@@ -60,6 +62,8 @@ var load = function(){
 
 $(document).ready(load);
 
+var containerResults = $("<div></div>");
+
 var getData = function(){
 
 	var aleatorioDestiny = Math.floor(Math.random()*(destiny.length));
@@ -84,9 +88,11 @@ var getData = function(){
 	pSumLetter.text(" La suma de las letras de tu nombre '" + name.length + "', indica que eres: " + lengthName[name.length-1]);
 
 	//add greeting, pLetter and pSumLetter in #container
-	$("#container").prepend(pSumLetter);
-	$("#container").prepend(pLetter);
-	$("#container").prepend(pName);
+	containerResults.addClass("result");
+	containerResults.append(pName);
+	containerResults.append(pLetter);
+	containerResults.append(pSumLetter);
+	$("#container").prepend(containerResults);
 
 	//Showing up button
 	$("#lastName").fadeIn();
@@ -94,6 +100,7 @@ var getData = function(){
 	//Event click for #lastName
 	$("#lastName").click(askLastName);
 }
+
 var askLastName = function(){
 	var aleatorioMeaningOfLastName = Math.floor(Math.random()*(meaningOfLastName.length));
 
@@ -108,5 +115,5 @@ var askLastName = function(){
 	plastName.text(" Tu apellido '" +  lastName.charAt(0).toUpperCase() + lastName.slice(1) + "', significa que: " + meaningOfLastName[aleatorioMeaningOfLastName]);
 
 	//Add plastName in #container
-	$("#container").append(plastName);
+	containerResults.append(plastName);
 };

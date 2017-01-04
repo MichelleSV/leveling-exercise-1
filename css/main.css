@@ -1,18 +1,45 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Chettan|Didact+Gothic|Lobster+Two');
+*{
+	margin: 0;
+	box-sizing: border-box;
+}
 #container{
 	width: 100%;
 	text-align: center;
+	background-image: url(../img/fondo.gif);
+	height: 100vh;
+	padding-top: 30vh;
 }
 .greeting{
 	display: inline-block;
-	padding: 20px 30px;
-	background-color: crimson;
-	font-family: fantasy;
-	font-size: 20px;
+	color: #228896;
+	font-family: "Lobster Two";
+	font-weight: 700;
+	font-size: 80px;
 }
-#next{
+#next, #lastName{
 	display: block;
-	margin: 20px auto;
+	margin: 40px auto;
+	font-family: "Didact Gothic";
+	background-color: #F5F5F5;
+	padding: 10px 20px;
+	font-size: 18px;
+	border: 0;
+	cursor: pointer;
+	border-radius: 10px;
 }
 #lastName{
 	display: none;
+}
+.result{
+	background-color: #A9C52F;
+	padding: 25px 35px;
+	display: table;
+	margin: 0 auto;
+	color: #283739;
+	font-family: "Baloo Chettan";
+	font-size: 19px;
+}
+.result p {
+	margin: 20px 0;
 }
